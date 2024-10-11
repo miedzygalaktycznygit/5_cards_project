@@ -1,3 +1,8 @@
+@font-face {
+  font-family: "Barlow Semi Condensed";
+  src: url(fonts/BarlowSemiCondensed-Medium.ttf) format("truetype");
+  font-display: swap;
+}
 /*
   Josh's Custom CSS Reset
   https://www.joshwcomeau.com/css/custom-css-reset/
@@ -13,6 +18,7 @@
 body {
   line-height: 1.5;
   background-color: hsl(210, 46%, 95%);
+  font-family: "Barlow Semi Condensed", sans-serif;
 }
 
 img, picture, video, canvas, svg {
@@ -84,7 +90,7 @@ main .left_box .upper_box .purple_box {
   display: flex;
   align-items: left;
   flex-direction: column;
-  height: 21.5rem;
+  height: 20.5rem;
   width: 40rem;
   padding: 2rem;
   background-color: hsl(263, 55%, 52%);
@@ -140,7 +146,7 @@ main .left_box .upper_box .gray_box {
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  height: 21.5rem;
+  height: 20.5rem;
   width: 20rem;
   background-color: hsl(217, 19%, 35%);
   border-radius: 0.5rem;
@@ -206,7 +212,7 @@ main .left_box .lower_box .white_box {
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  height: 21.5rem;
+  height: 20.5rem;
   width: 20rem;
   background-color: hsl(0, 0%, 100%);
   border-radius: 0.5rem;
@@ -250,7 +256,7 @@ main .left_box .lower_box .white_box blockquote .bigger {
 main .left_box .lower_box .white_box blockquote .smaller {
   font-size: 0.9rem;
   padding-top: 1.7rem;
-  color: hsl(217, 19%, 35%);
+  color: hsl(0, 0%, 61%);
   margin-right: 1rem;
 }
 main .left_box .lower_box .black_box {
@@ -258,7 +264,7 @@ main .left_box .lower_box .black_box {
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  height: 21.5rem;
+  height: 20.5rem;
   width: 40rem;
   background-color: hsl(219, 29%, 14%);
   border-radius: 0.5rem;
@@ -311,7 +317,7 @@ main .right_box {
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  height: 45rem;
+  height: 43rem;
   width: 20rem;
   background-color: hsl(0, 0%, 100%);
   border-radius: 0.5rem;
@@ -325,7 +331,7 @@ main .right_box .profile {
   flex-direction: row;
   height: -moz-fit-content;
   height: fit-content;
-  width: 38rem;
+  width: 18rem;
   -moz-column-gap: 1rem;
        column-gap: 1rem;
 }
@@ -355,11 +361,14 @@ main .right_box blockquote .bigger {
 main .right_box blockquote .smaller {
   font-size: 0.9rem;
   padding-top: 1.7rem;
-  color: hsl(217, 19%, 35%);
+  color: hsl(0, 0%, 61%);
   margin-right: 1rem;
 }
 
 @media (max-width: 80.313rem) {
+  .container {
+    height: 160rem;
+  }
   main {
     display: flex;
     justify-content: center;
@@ -394,8 +403,8 @@ main .right_box blockquote .smaller {
     flex-direction: column;
     height: -moz-fit-content;
     height: fit-content;
-    width: 22rem;
-    margin-bottom: 1rem;
+    width: 21rem;
+    margin-bottom: 2rem;
   }
   main .left_box .upper_box .purple_box .profile {
     width: 20rem;
@@ -412,7 +421,7 @@ main .right_box blockquote .smaller {
     align-items: center;
     flex-direction: column;
     height: 19rem;
-    width: 22rem;
+    width: 21rem;
   }
   main .left_box .upper_box .gray_box .profile {
     width: 20rem;
@@ -435,8 +444,8 @@ main .right_box blockquote .smaller {
     align-items: center;
     flex-direction: column;
     height: 19rem;
-    width: 22rem;
-    margin-bottom: 1rem;
+    width: 21rem;
+    margin-bottom: 2rem;
   }
   main .left_box .lower_box .white_box .profile {
     width: 20rem;
@@ -450,8 +459,8 @@ main .right_box blockquote .smaller {
     align-items: center;
     flex-direction: column;
     height: 32rem;
-    width: 22rem;
-    margin-bottom: 1rem;
+    width: 21rem;
+    margin-bottom: 2rem;
   }
   main .left_box .lower_box .black_box .profile {
     width: 20rem;
@@ -463,11 +472,12 @@ main .right_box blockquote .smaller {
     display: flex;
     justify-content: center;
     align-items: center;
-    flex-direction: row;
+    flex-direction: column;
     height: 44rem;
-    width: 22rem;
+    width: 21rem;
   }
   main .right_box .profile {
     width: 20rem;
+    margin-left: -2rem;
   }
 }/*# sourceMappingURL=style.css.map */
