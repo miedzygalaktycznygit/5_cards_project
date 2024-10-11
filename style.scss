@@ -1,0 +1,351 @@
+$Light_gray: hsl(0, 0%, 81%);
+$Light_grayish_blue: hsl(210, 46%, 95%);
+$Moderate_violet: hsl(263, 55%, 52%);
+$Very_dark_grayish_blue: hsl(217, 19%, 35%);
+$Very_dark_blackish_blue: hsl(219, 29%, 14%);
+$White: hsl(0, 0%, 100%);
+
+@mixin flexbox($direction, $height, $width){
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: $direction;
+    height: $height;
+    width: $width;
+}
+
+@mixin flexbox_2($direction, $height, $width, $padding){
+  display: flex;
+  align-items: left;
+  flex-direction: $direction;
+  height: $height;
+  width: $width;
+  padding: $padding;
+}
+
+@mixin img_border($color) {
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 5rem;
+  border: 0.2rem solid $color;
+}
+
+@mixin img_border2($color) {
+  width: 2rem;
+  height: 2rem;
+  border-radius: 5rem;
+}
+
+@mixin box_shadow {
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.247);
+}
+
+
+/*
+  Josh's Custom CSS Reset
+  https://www.joshwcomeau.com/css/custom-css-reset/
+*/
+*, *::before, *::after {
+    box-sizing: border-box;
+  }
+  * {
+    margin: 0;
+  }
+  body {
+    line-height: 1.5;
+    background-color: $Light_grayish_blue;
+  }
+  img, picture, video, canvas, svg {
+    display: block;
+    max-width: 100%;
+  }
+  input, button, textarea, select {
+    font: inherit;
+  }
+  p, h1, h2, h3, h4, h5, h6 {
+    overflow-wrap: break-word;
+  }
+
+  .container {
+    @include flexbox(row, 100vh, 100vw);
+    min-width: fit-content;
+    min-height: fit-content;
+    margin: 0 auto;
+  }
+
+  main {
+    @include flexbox(row, fit-content, fit-content);
+    background-color: $Light_grayish_blue;
+    column-gap: 2rem;
+    .left_box {
+        @include flexbox(column, fit-content, fit-content);
+        background-color: $Light_grayish_blue;
+        row-gap: 2rem;
+        .upper_box {
+            @include flexbox(row, fit-content, fit-content);
+            background-color: $Light_grayish_blue;
+            column-gap: 2rem;
+            .purple_box {
+                @include flexbox_2(column, 21.5rem, 40rem, 2rem);
+                background-color: $Moderate_violet;
+                border-radius: 0.5rem;
+                @include box_shadow();
+                .profile {
+                  @include flexbox(row, fit-content, 38rem);
+                  margin-top: -2rem;
+                  column-gap: 1rem;
+                  img {
+                    @include img_border(hsl(263, 54%, 58%));
+                    margin-left: -5.5rem;
+                    margin-top: -1.4rem;
+                  }
+                  svg {
+                    z-index: 0;
+                    margin-left: 16rem;
+                  }
+                  h3 {
+                    color: $Light_grayish_blue;
+                    margin-top: -1.2rem;
+                    font-size: 0.8rem;
+                  }
+                  p {
+                    color: $Light_gray;
+                    font-size: 0.8rem;
+                  }
+                }
+                blockquote {
+                  color: $Light_grayish_blue;
+                  font-size: 1.3rem;
+                  margin-top: -1.5rem;
+                  z-index: 2;
+                  .smaller {
+                    font-size: 0.9rem;
+                    padding-top: 1.7rem;
+                    color: $Light_gray;
+                  }
+                }
+            }
+            .gray_box {
+                @include flexbox(column, 21.5rem, 20rem);
+                background-color: $Very_dark_grayish_blue;
+                border-radius: 0.5rem;
+                row-gap: 3rem;
+                @include box_shadow();
+                .profile {
+                  @include flexbox(row, fit-content, 38rem);
+                  column-gap: 1rem;
+                  img {
+                    @include img_border2(hsl(263, 54%, 58%));
+                    margin-left: -6rem;
+                    margin-top: -0.5rem;
+                  }
+                  h3 {
+                    color: $Light_grayish_blue;
+                    font-size: 0.8rem;
+                    margin-top: -0.5rem;
+                  }
+                  p {
+                    color: $Light_gray;
+                    font-size: 0.8rem;
+                  }
+                }
+                blockquote {
+                  color: $Light_grayish_blue;
+                  font-size: 1.3rem;
+                  margin-top: -1.5rem;
+                  z-index: 2;
+                  margin-inline: 2.5rem;
+                  .smaller {
+                    font-size: 0.9rem;
+                    padding-top: 1.7rem;
+                    color: $Light_gray;
+                    margin-right: 1rem;
+                    margin-top: -1rem;
+                  }
+                }
+            }
+        }
+        .lower_box {
+            @include flexbox(row, fit-content, fit-content);
+            background-color: $Light_grayish_blue;
+            column-gap: 2rem;
+            .white_box {
+                @include flexbox(column, 21.5rem, 20rem);
+                background-color: $White; 
+                border-radius: 0.5rem;
+                row-gap: 1rem;
+                @include box_shadow();
+                .profile {
+                  @include flexbox(row, fit-content, 38rem);
+                  column-gap: 1rem;
+                  img {
+                    @include img_border2(hsl(263, 54%, 58%));
+                    margin-left: -6rem;
+                  }
+                  h3 {
+                    color: $Very_dark_grayish_blue;
+                    font-size: 0.8rem;
+                  }
+                  p {
+                    color: $Light_gray;
+                    font-size: 0.8rem;
+                  }
+                }
+                blockquote {
+                  color: $Very_dark_grayish_blue;
+                  font-size: 1.3rem;
+                  z-index: 2;
+                  margin-inline: 2.5rem;
+                  .bigger {
+                    padding-right: 2rem;
+                  }
+                  .smaller {
+                    font-size: 0.9rem;
+                    padding-top: 1.7rem;
+                    color: $Very_dark_grayish_blue;
+                    margin-right: 1rem;
+                  }
+                }
+            }
+            .black_box {
+                @include flexbox(column, 21.5rem, 40rem);
+                background-color: $Very_dark_blackish_blue;
+                border-radius: 0.5rem;
+                row-gap: 3rem;
+                @include box_shadow();
+                .profile {
+                  @include flexbox(row, fit-content, 38rem);
+                  margin-top: -2rem;
+                  column-gap: 1rem;
+                  img {
+                    @include img_border(hsl(263, 54%, 58%));
+                    margin-left: -26.5rem;
+                    margin-top: 1rem;
+                  }
+                  h3 {
+                    color: $Light_grayish_blue;
+                    font-size: 0.8rem;
+                    margin-top: 1rem;
+                  }
+                  p {
+                    color: $Light_gray;
+                    font-size: 0.8rem;
+                  }
+                }
+                blockquote {
+                  color: $Light_grayish_blue;
+                  font-size: 1.3rem;
+                  margin-top: -1.5rem;
+                  margin-inline: 2rem;
+                  .smaller {
+                    font-size: 0.9rem;
+                    padding-top: 1.7rem;
+                    color: $Light_gray;
+                    padding-right: 2rem;
+                  }
+                }
+            }
+        }
+    }
+    .right_box {
+        @include flexbox(column, 45rem, 20rem);
+        background-color: $White;
+        border-radius: 0.5rem;
+        row-gap: 2rem;
+        @include box_shadow();
+        .profile {
+          @include flexbox(row, fit-content, 38rem);
+          column-gap: 1rem;
+          img {
+            @include img_border2(hsl(263, 54%, 58%));
+            margin-left: -6rem;
+          }
+          h3 {
+            color: $Very_dark_grayish_blue;
+            font-size: 0.8rem;
+          }
+          p {
+            color: $Light_gray;
+            font-size: 0.8rem;
+          }
+        }
+        blockquote {
+          color: $Very_dark_grayish_blue;
+          font-size: 1.3rem;
+          z-index: 2;
+          margin-inline: 2.5rem;
+          .bigger {
+            padding-right: 2rem;
+          }
+          .smaller {
+            font-size: 0.9rem;
+            padding-top: 1.7rem;
+            color: $Very_dark_grayish_blue;
+            margin-right: 1rem;
+          }
+        }
+    }
+  }
+
+  @media (max-width: 80.313rem) {
+    main {
+        @include flexbox(column, fit-content, 22rem);
+        .left_box {
+            @include flexbox(column, fit-content, 22rem);
+            .upper_box {
+                @include flexbox(column, fit-content, 22rem);
+                .purple_box {
+                    @include flexbox(column, fit-content, 22rem);
+                    margin-bottom: 1rem;
+                    .profile {
+                      width: 20rem;
+                      img {
+                        margin-left: 0rem;
+                      }
+                      svg {
+                        margin-left: 2rem;
+                      }
+                    }
+                }
+                .gray_box {
+                    @include flexbox(column, 19rem, 22rem);
+                    .profile {
+                      width: 20rem;
+                      img {
+                        margin-left: -8rem;
+                      }
+                    }
+                }
+            }
+            .lower_box {
+                @include flexbox(column, fit-content, 22rem);
+                .white_box {
+                    @include flexbox(column, 19rem, 22rem);
+                    margin-bottom: 1rem;
+                    .profile {
+                      width: 20rem;
+                      img {
+                        margin-left: -8rem;
+                      }
+                    }
+                }
+                .black_box {
+                    @include flexbox(column, 32rem, 22rem);
+                    margin-bottom: 1rem;
+                    .profile {
+                      width: 20rem;
+                      img {
+                        margin-left: -9rem;
+                      }
+                    }
+                }
+            }
+        }
+        .right_box {
+            @include flexbox(row, 44rem, 22rem);
+            .profile {
+              width: 20rem;
+            }
+        }
+    }
+  }
